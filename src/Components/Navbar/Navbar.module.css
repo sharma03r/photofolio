@@ -1,3 +1,16 @@
 .navbar {
   background-color: #864af9;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.logo {
+  height: 49px;
+  width: 49px;
+  padding: 10px;
+}
+.navbar span {
+  font-size: 30px;
+  font-weight: 800;
 }

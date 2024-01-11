@@ -1,0 +1,31 @@
+.album_container {
+  margin: 0 auto;
+  max-width: 1024px;
+}
+.album_heading_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+.album_heading {
+  font-weight: bolder;
+  font-size: 1.7rem;
+}
+.album_container button {
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 700;
+  outline: none;
+  padding: 5px 10px;
+}
+.add_album_button {
+  background-color: rgba(0, 119, 255, 0.1);
+  border: 2px solid #07f;
+  color: #07f;
+}
+.cancel_form_button {
+  background-color: rgba(255, 19, 0, 0.1);
+  border: 2px solid #ff1300;
+  color: #ff1300;
+}
