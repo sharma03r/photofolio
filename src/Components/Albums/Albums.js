@@ -1,10 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Albums.module.css";
 import AlbumForm from "../AlbumForm/AlbumForm";
 import { db } from "../../firebaseInit";
+import { collection, onSnapshot } from "firebase/firestore";
+import AlbumItem from "../AlbumItem/AlbumItem";
 
 export default function Albums() {
   const [isformVisible, setFormVisible] = useState(false);
+  const [albums, setAlbums] = useState([]);
+  useEffect(() => {
+    const onSub = onSnapshot(collection(db, "albums"), (snapshot) => {
+      const albums = snapshot.docs.map((doc) => {
+        return {
+          id: doc.id,
+          ...doc.data(),
+        };
+      });
+      setAlbums(albums);
+      console.log(albums);
+    });
+  }, []);
   return (
     <div className={styles.album_container}>
       {isformVisible && <AlbumForm />}
@@ -18,6 +33,11 @@ export default function Albums() {
         >
           {isformVisible ? "Cancel" : "Add Album"}
         </button>
+      </div>
+      <div className={styles.albums_list}>
+        {albums.map((album, index) => (
+          <AlbumItem name={album.name} key={album.id} />
+        ))}
       </div>
     </div>
   );
