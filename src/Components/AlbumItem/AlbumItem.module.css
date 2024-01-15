@@ -26,6 +26,9 @@
   transition: 0.3s;
   width: 100%;
 }
+.album_item:hover span {
+  background-color: #07f;
+}
 .album_item img {
   margin-bottom: 30px;
   width: 50px;
