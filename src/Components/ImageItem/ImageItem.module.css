@@ -1,0 +1,36 @@
+.image_item {
+  align-items: center;
+  border: 5px solid #eee;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: flex-end;
+  margin-block: 30px;
+  transition: border-color 0.3s;
+  width: 100%;
+}
+.image_item:hover {
+  border-color: #07f;
+  color: #fff;
+}
+.image_item span {
+  background-color: #eee;
+  font-size: 1.1rem;
+  font-weight: 700;
+  justify-self: baseline;
+  padding-block: 5px;
+  text-align: center;
+  transition: 0.3s;
+  width: 100%;
+}
+.image_item:hover span {
+  background-color: #07f;
+}
+.image_item img {
+  height: 80%;
+  width: 100%;
+  object-fit: cover;
+}
